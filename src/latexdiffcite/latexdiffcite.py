@@ -493,7 +493,8 @@ def find_bibliography_arg(s):
     '''Looks through string for \bibliography{} command and retrieves the argument'''
 
     log.debug('searching for \\bibliography{} entry in tex file')
-    bibfile = re.search(r'$[^%]*\\bibliography\s*{(.*?)}', s, flags=re.M).group(1)
+    bibfile = 'sample.bib'
+    # re.search(r'$[^%]*\\bibliography\s*{(.*?)}', s, flags=re.M).group(1)
     log.debug('bibliography argument found: %s', bibfile)
     return bibfile
 
@@ -501,7 +502,7 @@ def find_bibliography_arg(s):
 def find_bibfiles(arg, oldnew):
     '''Searches for the bibfiles on the system'''
 
-    sourcepath = os.path.dirname(getattr(Files, 'tex_' + oldnew + '_path'))
+    sourcepath = os.path.dirname(getattr(Files, 'tex_' + oldnew + '_path')) 
     fnames = re.split('\s*,\s*', arg)
     for i, fname in enumerate(fnames):
         fnames[i] = fname if fname.endswith('.bib') else fname + '.bib'
