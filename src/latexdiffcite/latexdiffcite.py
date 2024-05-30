@@ -493,7 +493,7 @@ def find_bibliography_arg(s):
     '''Looks through string for \bibliography{} command and retrieves the argument'''
 
     log.debug('searching for \\bibliography{} entry in tex file')
-    bibfile = 'sample.bib'
+    bibfile = 'reference.bib'
     # re.search(r'$[^%]*\\bibliography\s*{(.*?)}', s, flags=re.M).group(1)
     log.debug('bibliography argument found: %s', bibfile)
     return bibfile
